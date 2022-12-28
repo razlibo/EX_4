@@ -4,15 +4,25 @@
 
 #ifndef EX_4_HUFFMANNODE_H
 #define EX_4_HUFFMANNODE_H
-#include "CompareNode.h"
+
+#include <queue>
+#include <string>
+#include <vector>
+#include <iostream>
+using namespace std;
 
 class HuffmanNode {
-private:
-    int a;
-
 public:
     friend class CompareNode;
 };
 
+class CompareNode {
+public:
+    bool operator()(HuffmanNode *const &n1, HuffmanNode *const &n2)
+    {
+        return n1->frequency > n2->frequency;
+    }
+
+};
 
 #endif //EX_4_HUFFMANNODE_H
