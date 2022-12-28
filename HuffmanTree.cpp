@@ -16,7 +16,10 @@ void HuffmanTree::preOrder(HuffmanNode *current) {
 
 }
 
-HuffmanTree::HuffmanTree():  {
+HuffmanTree::HuffmanTree()  {
     pQueue = *new priority_queue<HuffmanNode*, vector<HuffmanNode*>,CompareNode>;
+}
+
+void HuffmanTree::encode(string str) {
 
 }

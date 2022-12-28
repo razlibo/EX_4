@@ -16,8 +16,8 @@ private:
     string encodedText;
 
 public:
-
-    void  preOrder(HuffmanNode* current);//preorder
+    void encode(string str);
+    void preOrder(HuffmanNode* current);//preorder
     HuffmanTree();
 };
 
