@@ -12,6 +12,9 @@
 using namespace std;
 
 class HuffmanNode {
+private:
+    int a;
+
 public:
     string str;
     int frequency;

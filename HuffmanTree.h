@@ -9,16 +9,15 @@ class HuffmanTree {
 private:
     priority_queue<HuffmanNode*, vector<HuffmanNode*>,	CompareNode> pQueue;
     void process(string val) { cout << val << " "; }//print the value
-    int numberOfLetters;
-    string letters;
-    string originalText;
-    string treeStructure;
-    string encodedText;
+
 
 public:
+    HuffmanTree();
     void encode(string str);
     void preOrder(HuffmanNode* current);//preorder
-    HuffmanTree();
+    void Decode(int numberOfLetters, string letters, string treeStructure, string encodedText);
+    void BuildTreeFromStructure(string&, string&, HuffmanNode*);
+    string FindNextLetter(string&, HuffmanNode*);
 };
 
 
