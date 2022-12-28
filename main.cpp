@@ -22,7 +22,7 @@ int main()
             case 1:
 
                 cout << "enter the original text" << endl;
-                cin >> word;
+
 
                 //Build Huffman tree given the data inside "word".
                 //Then find the code of each letter.
