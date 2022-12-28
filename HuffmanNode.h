@@ -13,6 +13,9 @@ using namespace std;
 
 class HuffmanNode {
 public:
+    string str;
+    int frequency;
+    HuffmanNode *left, *right;
     friend class CompareNode;
 };
 

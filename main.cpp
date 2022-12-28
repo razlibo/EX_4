@@ -3,9 +3,9 @@
 #include <list>
 #include <string>
 #include <cmath>
-#include "huffman.h"
+#include "HuffmanTree.h"
 
-
+using namespace std;
 int main()
 {
     int choice;
