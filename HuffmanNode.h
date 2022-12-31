@@ -13,13 +13,16 @@ using namespace std;
 
 class HuffmanNode {
 private:
-    int a;
+    int a{};
 
 public:
     string str;
     int frequency;
-    HuffmanNode *left, *right;
+    HuffmanNode *left, *right, *parent;
     friend class CompareNode;
+    HuffmanNode(string s, int f, HuffmanNode* l, HuffmanNode* r,HuffmanNode* p);
+
+    HuffmanNode();
 };
 
 class CompareNode {
