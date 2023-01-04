@@ -1,6 +1,8 @@
 #ifndef EX_4_HUFFMANTREE_H
 #define EX_4_HUFFMANTREE_H
 #include "HuffmanNode.h"
+
+// Class for decode and encode using Huffman code
 class HuffmanTree {
 private:
     priority_queue<HuffmanNode*, vector<HuffmanNode*>,	CompareNode> pQueue;

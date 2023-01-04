@@ -7,6 +7,7 @@
 #include <iostream>
 using namespace std;
 
+// Class to represent node in the Huffman tree
 class HuffmanNode {
 public:
     string str;
