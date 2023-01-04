@@ -39,3 +39,30 @@ int main() {
     } while (choice != 3);
     return 0;
 }
+
+/*
+enter 1 to encode a text
+enter 2 to decode a text
+enter 3 to exit
+1
+enter the original text
+avffafffs
+The encoded string is
+4
+asvf
+0010111
+000111100111010
+2
+enter n
+4
+enter the letters
+asvf
+enter the encoded structure
+0010111
+enter the encoded text
+000111100111010
+The decoded string is
+avffafffs
+3
+
+ */
