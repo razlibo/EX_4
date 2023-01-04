@@ -8,16 +8,22 @@
 class HuffmanTree {
 private:
     priority_queue<HuffmanNode*, vector<HuffmanNode*>,	CompareNode> pQueue;
+    HuffmanNode* root;
 
-    string process(string str,char c){str.push_back(c);return str;};
-    HuffmanNode buildHuffmanTree( priority_queue<HuffmanNode*, vector<HuffmanNode*>,	CompareNode> &pQueue);
-public:
-    HuffmanTree();
-    void encode(string str);
-    void preOrder(HuffmanNode current,string& s);//preorder
-    void Decode(int numberOfLetters, string letters, string treeStructure, string encodedText);
+    void inOrder(HuffmanNode* root);
+    void FindTreeStructure(HuffmanNode current,string& s);
+    HuffmanNode* FindPath(HuffmanNode* current,char c);
+    string BuildStrForDecode(HuffmanNode* current,string str,string& s);
+    priority_queue<HuffmanNode*, vector<HuffmanNode*>,	CompareNode> buildQ( priority_queue<HuffmanNode*, vector<HuffmanNode*>,	CompareNode>& pQ,string str);
+    HuffmanNode* buildHuffmanTree(priority_queue<HuffmanNode*, vector<HuffmanNode*>,CompareNode> pQ);
     void BuildTreeFromStructure(string&, string&, HuffmanNode*);
     string FindNextLetter(string&, HuffmanNode*);
+    void clear(HuffmanNode* current);
+public:
+    HuffmanTree();
+    ~HuffmanTree();
+    void encode(string str);
+    void Decode();
 };
 
 

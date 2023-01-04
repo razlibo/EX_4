@@ -21,3 +21,5 @@ HuffmanNode::HuffmanNode(string s, int f, HuffmanNode *l, HuffmanNode *r, Huffma
     right = r;
     parent = p;
 }
+
+
