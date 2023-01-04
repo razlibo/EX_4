@@ -1,7 +1,3 @@
-//
-// Created by 97253 on 28/12/2022.
-//
-
 #ifndef EX_4_HUFFMANTREE_H
 #define EX_4_HUFFMANTREE_H
 #include "HuffmanNode.h"

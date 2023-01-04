@@ -1,6 +1,9 @@
+/*
+ * Yonatan Klein 322961764
+ * Raz Leibovich 209521863
+ * Data Structure EX. 4
+*/
 #include <iostream>
-#include <queue>
-#include <list>
 #include <string>
 #include <cmath>
 #include "HuffmanTree.h"

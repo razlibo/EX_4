@@ -1,7 +1,3 @@
-//
-// Created by 97253 on 28/12/2022.
-//
-
 #ifndef EX_4_HUFFMANNODE_H
 #define EX_4_HUFFMANNODE_H
 
@@ -21,6 +17,7 @@ public:
     HuffmanNode();
 };
 
+// class for comparing the frequency of the nodes for the priority queue
 class CompareNode {
 public:
     bool operator()(HuffmanNode *const &n1, HuffmanNode *const &n2)

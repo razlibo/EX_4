@@ -1,6 +1,3 @@
-//
-// Created by 97253 on 28/12/2022.
-//
 #include <algorithm>
 #include "HuffmanTree.h"
 #include <map>
@@ -134,7 +131,7 @@ HuffmanNode *HuffmanTree::buildHuffmanTree(priority_queue<HuffmanNode *, vector<
     return p;
 }
 
-
+// Function to decode given encoded string
 void HuffmanTree::Decode() {
     int numberOfLetters;
     string letters, treeStructure, encodedText;
@@ -144,49 +141,56 @@ void HuffmanTree::Decode() {
     cin >> letters;
     cout << "enter the encoded structure" << endl;
     cin >> treeStructure;
+
+    // if the structure don't fit to number of letters
     int count = count_if(treeStructure.begin(), treeStructure.end(),[](char a){return a == '1';});
     if(count != numberOfLetters)
         throw "ERROR";
     cout << "enter the encoded text" << endl;
     cin >> encodedText;
     cout << "The decoded string is" << endl;
-    //auto* root = new HuffmanNode();
+
+    // call to build the tree
     BuildTreeFromStructure(treeStructure, letters, root);
     string decodedText;
+
+    //decoding
     while (!encodedText.empty()){
         decodedText += FindNextLetter(encodedText, root);
     }
     cout << decodedText<<endl;
 
 }
-
+// Recursive function to build the huffman tree
 void HuffmanTree::BuildTreeFromStructure(string &treeStructure, string &letters, HuffmanNode* node) {
-    if(treeStructure.empty()) return;
-    if(treeStructure[0] == '1') {
+    if(treeStructure.empty()) return; // if we're done
+    if(treeStructure[0] == '1') { // if the node is a leaf
         node->str = letters[0];
         letters.erase(0,1);
         treeStructure.erase(0,1);
         return;
-    }else if(treeStructure[0] == '0') {
+    }else if(treeStructure[0] == '0') { // if the node isn't a leaf
         node->left = new HuffmanNode();
         node->right = new HuffmanNode();
         treeStructure.erase(0, 1);
+        // calling the function for the children
         BuildTreeFromStructure(treeStructure, letters, node->left);
         BuildTreeFromStructure(treeStructure, letters, node->right);
-    }else{
+    }else{ // if the tree structure string include symbols other than 0 or 1
         throw "ERROR";
     }
 }
 
+// Find the next letter in the string by the given tree
 string HuffmanTree::FindNextLetter(string& encodedText,HuffmanNode *node) {
-    while(node->str.empty()){
+    while(node->str.empty()){ // if the node isn't a leaf
         if(encodedText[0] == '0'){
             node = node->left;
             encodedText.erase(0,1);
         }else if (encodedText[0] == '1'){
             node = node->right;
             encodedText.erase(0,1);
-        } else{
+        } else{// if the encoded string include symbols other than 0 or 1
             throw "ERROR";
         }
     }
